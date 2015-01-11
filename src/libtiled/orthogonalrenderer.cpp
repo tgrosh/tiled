@@ -339,7 +339,7 @@ void OrthogonalRenderer::drawMapObject(QPainter *painter,
         shadowPen.setColor(Qt::black);
 
         QColor brushColor = color;
-        brushColor.setAlpha(50);
+        brushColor.setAlpha(255);
         const QBrush fillBrush(brushColor);
 
         painter->setRenderHint(QPainter::Antialiasing);
