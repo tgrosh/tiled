@@ -339,7 +339,6 @@ void OrthogonalRenderer::drawMapObject(QPainter *painter,
         shadowPen.setColor(Qt::black);
 
         QColor brushColor = color;
-        brushColor.setAlpha(255);
         const QBrush fillBrush(brushColor);
 
         painter->setRenderHint(QPainter::Antialiasing);
@@ -364,7 +363,6 @@ void OrthogonalRenderer::drawMapObject(QPainter *painter,
 
             // Draw the shadow
             painter->setPen(shadowPen);
-            painter->drawRect(rect.translated(shadowOffset));
             if (!name.isEmpty())
                 painter->drawText(QPointF(0, -4 - lineWidth / 2) + shadowOffset, name);
 
@@ -381,7 +379,6 @@ void OrthogonalRenderer::drawMapObject(QPainter *painter,
             QPolygonF screenPolygon = pixelToScreenCoords(object->polygon());
 
             painter->setPen(shadowPen);
-            painter->drawPolyline(screenPolygon.translated(shadowOffset));
 
             painter->setPen(linePen);
             painter->setBrush(fillBrush);
@@ -393,7 +390,6 @@ void OrthogonalRenderer::drawMapObject(QPainter *painter,
             QPolygonF screenPolygon = pixelToScreenCoords(object->polygon());
 
             painter->setPen(shadowPen);
-            painter->drawPolygon(screenPolygon.translated(shadowOffset));
 
             painter->setPen(linePen);
             painter->setBrush(fillBrush);
@@ -411,7 +407,6 @@ void OrthogonalRenderer::drawMapObject(QPainter *painter,
 
             // Draw the shadow
             painter->setPen(shadowPen);
-            painter->drawEllipse(rect.translated(shadowOffset));
             if (!name.isEmpty())
                 painter->drawText(QPoint(1, -5 + 1), name);
 
