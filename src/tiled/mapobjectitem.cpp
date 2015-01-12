@@ -338,11 +338,8 @@ QColor MapObjectItem::objectColor(const MapObject *object)
 
     // If not, get color from object group
     const ObjectGroup *objectGroup = object->objectGroup();
-    if (objectGroup && objectGroup->color().isValid()) {
-        QColor groupColor = objectGroup->color();
-        groupColor.setAlpha(255 * objectGroup->opacity());
-        return groupColor;
-    }
+    if (objectGroup && objectGroup->color().isValid())
+            return objectGroup->color();
 
     // Fallback color
     return Qt::gray;
